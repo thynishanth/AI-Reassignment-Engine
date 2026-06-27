@@ -2,12 +2,22 @@ spring:
   application:
     name: backend
   datasource:
-    url: jdbc:postgresql://localhost:5432/hackathon
-    username: postgres
-    password: postgres
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
+
+llm:
+  provider: gemini
+  model: gemini-3.5-flash
+  base-url: https://generativelanguage.googleapis.com
+  api-key: ${LLM_API_KEY}
+
+
+routing:
+  strategy: AI

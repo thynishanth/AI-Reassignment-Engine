@@ -574,32 +574,3 @@ mvn test
 2. Write tests for new features
 3. Update documentation
 4. Ensure compilation: `mvn clean compile`
-
----
-
-## 📄 License
-
-Hackathon Project 2026
-
----
-
-## 🙋 FAQ
-
-**Q: How do I switch strategies at runtime?**
-A: Use `PATCH /config/routing/strategy` with `{"strategyType": "AI"}` (no restart needed).
-
-**Q: What happens if Gemini API fails?**
-A: Layer 1 catches the error, falls back to Rule-Based. If 5+ failures occur, Layer 2 auto-fallbacks the entire system.
-
-**Q: How do I check if AI strategy is healthy?**
-A: Use `GET /config/routing/health` to see failure count, success count, and recommendations.
-
-**Q: How do I manually force fallback?**
-A: Use `POST /config/routing/fallback` to switch to Rule-Based immediately and reset failure counter.
-
-**Q: Are there N+1 queries?**
-A: No! All resolved with `@EntityGraph`. Dashboard load: 40ms (was 700ms).
-
----
-
-Built with ❤️ for the Hackathon | 5-Hour Sprint | 10 Participants
