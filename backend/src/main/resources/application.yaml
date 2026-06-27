@@ -20,4 +20,4 @@ llm:
 
 
 routing:
-  strategy: AI
+  strategy: RULE_BASED
